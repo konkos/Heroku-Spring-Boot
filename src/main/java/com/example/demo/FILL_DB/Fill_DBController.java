@@ -26,12 +26,12 @@ public class Fill_DBController {
         matchRepository.save(match);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/team")
     public void deleteTeam(@RequestParam Long id) {
         teamRepository.deleteById(id);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/match")
     public void deleteMatch(@RequestParam Long id) {
         matchRepository.deleteById(id);
     }
