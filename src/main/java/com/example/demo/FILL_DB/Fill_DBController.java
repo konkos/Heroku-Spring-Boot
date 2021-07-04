@@ -4,6 +4,7 @@ import com.example.demo.model.Match;
 import com.example.demo.model.Team;
 import com.example.demo.repository.MatchRepository;
 import com.example.demo.repository.TeamRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/fillDB")
 public class Fill_DBController {
 
+    @Autowired
     private TeamRepository teamRepository;
+    @Autowired
     private MatchRepository matchRepository;
 
     @PostMapping("/team")
