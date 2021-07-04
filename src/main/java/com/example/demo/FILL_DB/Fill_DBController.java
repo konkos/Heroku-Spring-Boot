@@ -5,10 +5,7 @@ import com.example.demo.model.Team;
 import com.example.demo.repository.MatchRepository;
 import com.example.demo.repository.TeamRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/fillDB")
@@ -27,5 +24,15 @@ public class Fill_DBController {
     @PostMapping("/match")
     public void addMatch(@RequestBody Match match) {
         matchRepository.save(match);
+    }
+
+    @DeleteMapping
+    public void deleteTeam(@RequestParam Long id) {
+        teamRepository.deleteById(id);
+    }
+
+    @DeleteMapping
+    public void deleteMatch(@RequestParam Long id) {
+        matchRepository.deleteById(id);
     }
 }
